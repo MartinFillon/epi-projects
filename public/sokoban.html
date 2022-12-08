@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Sokoban</title>
 </head>
-<body style="background-color: black; color: white">
+<body style="background-color: black; color: white; white-space: pre">
 <input type="file" id="file-input" >
 <h1>[Key]</h1>
 <p>[Map]</p>
@@ -17,7 +17,6 @@
     let reader = new FileReader();
     reader.onload = function (e) {
       document.querySelector('p').innerHTML = e.target.result;
-      console.log(e.target.result);
     }
     reader.readAsText(file)
   }
