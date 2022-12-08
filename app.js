@@ -13,7 +13,11 @@ app.use(express.static("public"));
 app.use(express.urlencoded());
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.send("Hello World");
+});
+
+app.get("/architect", (req, res) => {
+    res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
 app.post("/calculus", (req, res) => {
