@@ -20,7 +20,7 @@ app.get("/architect", (req, res) => {
     res.sendFile(path.join(__dirname, "public/arhitect.html"));
 });
 
-app.post("/calculus", (req, res) => {
+app.get("/calculus", (req, res) => {
     console.log("calculus");
     let coos = coords.set_coords(req.body.x, req.body.y);
     let translation_matrix = translation.set_translation(req.body.translation_x, req.body.translation_y);
