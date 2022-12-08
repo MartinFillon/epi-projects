@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <title>Sokoban</title>
 </head>
-<body>
-<p>[KeyCode]</p>
+<body style="background-color: black; color: white">
+<input type="file" id="file-input" >
+<h1>[Key]</h1>
+<p>[Map]</p>
 <script>
   window.addEventListener('keydown', function (e) {
-    document.querySelector('p').innerHTML = `You pressed ${e.key}`;
+    document.querySelector('h1').innerHTML = `You pressed ${e.key}`;
   }, false);
+  function readSingleFile(e) {
+    let file = e.target.files[0];
+    let reader = new FileReader();
+    reader.onload = function (e) {
+      document.querySelector('p').innerHTML = e.target.result;
+    }
+    reader.readAsText(file)
+  }
+  document.getElementById('file-input').addEventListener('change', readSingleFile, false);
 </script>
 </body>
 </html>
