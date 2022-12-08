@@ -5,28 +5,28 @@ module.exports.speed_calc = function(va, vb) {
 module.exports.movement = function (vb, n, speed, res) {
     let position = [(vb[0] + (n * speed[0])), (vb[1] + (n * speed[1])), (vb[2] + (n * speed[2]))];
 
-    res.write(`At time t + ${n}, ball coordinates will be:`)
-    res.write(`(${position[0].toFixed(2)}, ${position[1].toFixed(2)}, ${position[2].toFixed(2)})`);
+    res.write(`At time t + ${n}, ball coordinates will be:\n`)
+    res.write(`(${position[0].toFixed(2)}, ${position[1].toFixed(2)}, ${position[2].toFixed(2)})\n`);
 
     return position;
 };
 
 module.exports.collide = function name(vb, speed, res) {
     if (vb[2] === 0) {
-        res.write("The incidence angle is:");
+        res.write("The incidence angle is:\n");
         let angle = 0;
-        res.write(`${angle.toFixed(2)} degrees`);
+        res.write(`${angle.toFixed(2)} degrees\n`);
     }
     if ((vb[2] > 0 && speed[2] < 0) || (vb[2] < 0 && speed[2] > 0)) {
-        res.write("The incidence angle is:");
+        res.write("The incidence angle is:\n");
         let t = -vb[2] / speed[2];
         let position_z0 = [(vb[0] + (t * speed[0])), (vb[1] + (t * speed[1])), (vb[2] + (t * speed[2]))];
         let base = Math.sqrt(((vb[0] - position_z0[0]) ** 2) + ((vb[1] - position_z0[1]) ** 2));
         let angle = Math.atan(vb[2]/base);
         angle = angle * (180/Math.PI);
-        res.write(`${angle.toFixed(2)} degrees`);
+        res.write(`${angle.toFixed(2)} degrees\n`);
     } else {
-        res.write("The ball won't reach the paddle.");
+        res.write("The ball won't reach the paddle.\n");
     }
 };
 

@@ -57,8 +57,8 @@ app.get("/pong_calculus", (req, res) => {
     let va = utils.setvect(req.query.x0, req.query.y0, req.query.z0);
     let vb = utils.setvect(req.query.x1, req.query.y1, req.query.z1);
     let speed = utils.speed_calc(va, vb);
-    res.write("The velocity vector of the ball is:")
-    res.write(`(${speed[0].toFixed(2)}, ${speed[1].toFixed(2)}, ${speed[2].toFixed(2)})`);
+    res.write("The velocity vector of the ball is:\n")
+    res.write(`(${speed[0].toFixed(2)}, ${speed[1].toFixed(2)}, ${speed[2].toFixed(2)})\n`);
     utils.movement(vb, n, speed, res);
     utils.collide(vb, speed, res);
     res.end();
