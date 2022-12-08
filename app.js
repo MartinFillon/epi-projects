@@ -6,22 +6,25 @@ const scaling = require("./src/scaling.cjs");
 const rotation = require("./src/rotation.cjs");
 const matrix = require("./src/matrix.cjs");
 const reflection = require("./src/reflection.cjs");
+let utils = require("./src/utils.cjs");
+let errors = require("./src/errors.cjs");
 const port = 3000;
 const app = express();
 
 app.use(express.static("public"));
-//app.use(express.urlencoded());
 
 app.get("/", (req, res) => {
-    console.log("index");
 });
 
 app.get("/architect", (req, res) => {
-    res.sendFile(path.join(__dirname, "public/arhitect.html"));
+    res.sendFile(path.join(__dirname, "public/architect.html"));
 });
 
-app.get("/calculus", (req, res) => {
-    console.log(req);
+app.get("/pong", (req, res) => {
+    res.sendFile(path.join(__dirname, "public/pong.html"));
+});
+
+app.get("/architect_calculus", (req, res) => {
     let coos = coords.set_coords(req.query.x, req.query.y);
     let translation_matrix = translation.set_translation(req.query.translation_x, req.query.translation_y);
     let scaling_matrix = scaling.set_scaling(req.query.scaling_x, req.query.scaling_y);
@@ -46,6 +49,18 @@ app.get("/calculus", (req, res) => {
     res.write(`${final_matrix[2][0].toFixed(2)} ${final_matrix[2][1].toFixed(2)} ${final_matrix[2][2].toFixed(2)}`);
     res.write('\n');
     res.write(`(${coos[0].toFixed(2)}, ${coos[1].toFixed(2)}) => (${new_coos[0]}, ${new_coos[1]})`);
+    res.end();
+})
+
+app.get("/pong_calculus", (req, res) => {
+    let n = errors.check_n(req.query.n);
+    let va = utils.setvect(req.query.x0, req.query.y0, req.query.z0);
+    let vb = utils.setvect(req.query.x1, req.query.y1, req.query.z1);
+    let speed = utils.speed_calc(va, vb);
+    res.write("The velocity vector of the ball is:")
+    res.write(`(${speed[0].toFixed(2)}, ${speed[1].toFixed(2)}, ${speed[2].toFixed(2)})`);
+    utils.movement(vb, n, speed, res);
+    utils.collide(vb, speed, res);
     res.end();
 })
 
