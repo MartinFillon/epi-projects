@@ -16,9 +16,12 @@
     let file = e.target.files[0];
     let reader = new FileReader();
     reader.onload = function (e) {
-      document.querySelector('h1').innerHTML = e.target.result;
+      displayMap(e.target.result);
     }
     reader.readAsText(file)
+  }
+  function displayMap (content) {
+    document.querySelector('h1').innerHTML = content
   }
   document.getElementById('file-input').addEventListener('change', readSingleFile, false);
 </script>
