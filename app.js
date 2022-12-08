@@ -10,12 +10,12 @@ const port = 3000;
 const app = express();
 
 app.use(express.static("public"));
-app.use(express.urlencoded());
+//app.use(express.urlencoded());
 
 app.get("/", (req, res) => {
     res.send("Hello World");
 });
-
+/*
 app.get("/architect", (req, res) => {
     res.sendFile(path.join(__dirname, "public/index.html"));
 });
@@ -47,7 +47,7 @@ app.post("/calculus", (req, res) => {
     res.write(`(${coos[0].toFixed(2)}, ${coos[1].toFixed(2)}) => (${new_coos[0]}, ${new_coos[1]})`);
     res.end();
 })
-
-app.listen(port, ()=> {
+*/
+app.listen(process.env.PORT || 3000, ()=> {
     console.log(`Server listening on port ${port}`);
 })
