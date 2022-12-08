@@ -6,17 +6,17 @@
 </head>
 <body style="background-color: black; color: white; white-space: pre; font-variant-numeric: tabular-nums;">
 <input type="file" id="file-input" >
-<h1>[Key]</h1>
-<p>[Map]</p>
+<h1>[Map]</h1>
+<p>[Key]</p>
 <script>
   window.addEventListener('keydown', function (e) {
-    document.querySelector('h1').innerHTML = `You pressed ${e.key}`;
+    document.querySelector('p').innerHTML = `You pressed ${e.key}`;
   }, false);
   function readSingleFile(e) {
     let file = e.target.files[0];
     let reader = new FileReader();
     reader.onload = function (e) {
-      document.querySelector('p').innerHTML = e.target.result;
+      document.querySelector('h1').innerHTML = e.target.result;
     }
     reader.readAsText(file)
   }
