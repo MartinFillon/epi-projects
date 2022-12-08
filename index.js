@@ -9,6 +9,7 @@ const reflection = require("./src/reflection.cjs");
 const port = 3000;
 const app = express();
 
+app.use(express.static("public"));
 app.use(express.urlencoded());
 
 app.get("/", (req, res) => {
