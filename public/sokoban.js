@@ -40,6 +40,7 @@ function readSingleFile(e) {
             allowedChar.forEach(elm => {
                 if (elm !== contents[i]) {
                     err = 1;
+                    document.querySelector('h1').innerHTML += contents[i];
                 }
             })
         }
