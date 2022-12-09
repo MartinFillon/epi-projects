@@ -13,6 +13,10 @@ function display2dMap(map) {
     }
 }
 
+function displayPlayerPosition(playerPosition) {
+    document.querySelector('h3').innerHTML = playerPosition.toString();
+}
+
 window.addEventListener('keydown', function (e) {
     check_key(e.key);
 }, false);
@@ -40,8 +44,9 @@ function check_key(key) {
             let map = document.getElementById('map').innerHTML;
             let map_2d = get_2d_map(map);
             let playerPosition = getPlayerPosition(map_2d);
-            let map_2d_move = move_player(map_2d, key, playerPosition);
-            display2dMap(map_2d_move);
+            displayPlayerPosition(playerPosition);
+            //let map_2d_move = move_player(map_2d, key, playerPosition);
+            display2dMap(map_2d);
         }
     });
 }
