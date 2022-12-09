@@ -7,7 +7,7 @@ function display2dMap(map) {
     for (let x = 0; x < map.length - 1; x++) {
         for (let y = 0; y < map[x].length; y++) {
             if (map[x][y] !== undefined) {
-                document.querySelector('h2').innerHTML += map[x][y];
+                document.querySelector('h1').innerHTML += map[x][y];
             }
         }
     }
@@ -39,6 +39,8 @@ function check_key(key) {
             document.getElementById('key').innerHTML = `You pressed ${key}`;
             let map = document.getElementById('map').innerHTML;
             let map_2d = get_2d_map(map);
+            let playerPosition = getPlayerPosition(map_2d);
+            map_2d = move_player(map_2d, key, playerPosition);
             display2dMap(map_2d);
         }
     });
@@ -68,4 +70,41 @@ function get_2d_map(map) {
         }
     }
     return map_2d;
+}
+
+function getPlayerPosition(map) {
+    let px = -1;
+    let py = -1;
+    for (let x = 0; x < map.length; x++) {
+        for (let y = 0; y < map[x].length; y++) {
+            if (map[x][y] === 'P') {
+                px = x;
+                py = y;
+            }
+        }
+    }
+    return {
+        x: px,
+        y: py
+    }
+}
+
+function move_player(map, key, playerPosition) {
+    if (key === 'ArrowUp' && map[playerPosition.x - 1][playerPosition.y] === ' ') {
+        map[playerPosition.x][playerPosition.y] = ' ';
+        map[playerPosition.x--][playerPosition.y] = 'P';
+    }
+    if (key === 'ArrowDown' && map[playerPosition.x + 1][playerPosition.y] === ' ') {
+        map[playerPosition.x][playerPosition.y] = ' ';
+        map[playerPosition.x++][playerPosition.y] = 'P';
+    }
+    if (key === 'ArrowLeft' && map[playerPosition.x][playerPosition.y - 1] === ' ') {
+        map[playerPosition.x][playerPosition.y] = ' ';
+        map[playerPosition.x][playerPosition.y--] = 'P';
+    }
+    if (key === 'ArrowRight' && map[playerPosition.x][playerPosition.y + 1] === ' ') {
+        map[playerPosition.x][playerPosition.y] = ' ';
+        map[playerPosition.x][playerPosition.y++] = 'P';
+    }
+    return map;
 }
