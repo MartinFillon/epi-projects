@@ -134,7 +134,7 @@ function getObjectives(map) {
 
 function move_player(map_2d, key, playerPosition) {
     for (let i = 0; i < OBJECTIVES_COUNT; i++) {
-        document.getElementById('objectives').innerHTML = JSON.stringify(OBJECTIVES[i]);
+        document.getElementById('objectives').innerHTML += JSON.stringify(OBJECTIVES[i]);
     }
     return movePlayer(map_2d, key, playerPosition, ' ');
 }
