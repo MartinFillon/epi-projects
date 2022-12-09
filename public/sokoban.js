@@ -3,7 +3,7 @@ function displayMap(map) {
 }
 
 function display2dMap(map) {
-    document.querySelector('h2').innerHTML = "\n";
+    document.querySelector('h1').innerHTML = "\n";
     for (let x = 0; x < map.length - 1; x++) {
         for (let y = 0; y < map[x].length; y++) {
             if (map[x][y] !== undefined) {
