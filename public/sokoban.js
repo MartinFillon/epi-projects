@@ -8,6 +8,9 @@ function readSingleFile(e) {
         displayMap(e.target.result);
     }
     reader.readAsText(file);
+    let content = file.text();
+    content[0] = 'E';
+    displayMap(content);
 }
 function displayMap (content) {
     document.querySelector('h1').innerHTML = content
