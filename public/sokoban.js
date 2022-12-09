@@ -40,8 +40,8 @@ function check_key(key) {
             let map = document.getElementById('map').innerHTML;
             let map_2d = get_2d_map(map);
             let playerPosition = getPlayerPosition(map_2d);
-            map_2d = move_player(map_2d, key, playerPosition);
-            display2dMap(map_2d);
+            let map_2d_move = move_player(map_2d, key, playerPosition);
+            display2dMap(map_2d_move);
         }
     });
 }
