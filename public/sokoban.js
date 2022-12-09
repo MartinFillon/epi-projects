@@ -1,23 +1,11 @@
-const fs = require("fs");
+const fs = require('fs')
+let fileData = fs.readFileSync("tmp/map.txt");
+
+function displayMap(map) {
+    document.querySelector('h1').innerHTML = map;
+}
 
 window.addEventListener('keydown', function (e) {
     document.querySelector('p').innerHTML = `You pressed ${e.key}`;
-}, false);
-
-function readSingleFile(e) {
-    let file = e.target.files[0];
-    let reader = new FileReader();
-    reader.onload = function (e) {
-        fs.writeFileSync("tmp/map.txt", e.target.result);
-        displayMap(fs.readFileSync("tmp/map.txt"));
-    }
-    reader.readAsText(file);
-}
-
-function displayMap (content) {
-    document.querySelector('h1').innerHTML = content
-}
-
-document.getElementById('file-input').addEventListener('change',  (e) => {
-    readSingleFile(e);
+    displayMap(fileData);
 }, false);

@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8087fc92-97e5-40ba-9b3c-bfc617cb0a44" name="Changes" comment="[DEBUG] map modification and map showing">
-      <change afterPath="$PROJECT_DIR$/public/tmp/map.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sokoban.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/sokoban.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/sokoban.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/sokoban.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tmp/map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/tmp/map.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +66,7 @@
       <workItem from="1670488876891" duration="4113000" />
       <workItem from="1670509206650" duration="33000" />
       <workItem from="1670533265067" duration="3898000" />
-      <workItem from="1670574572018" duration="2459000" />
+      <workItem from="1670574572018" duration="3288000" />
     </task>
     <task id="LOCAL-00001" summary="[ADD] 101pong">
       <created>1670534286614</created>
@@ -207,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670576764770</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="[DEBUG] map modification and map showing">
+      <created>1670577058490</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1670577058490</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
