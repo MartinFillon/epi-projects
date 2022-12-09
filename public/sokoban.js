@@ -46,7 +46,7 @@ function check_key(key) {
             let playerPosition = getPlayerPosition(map_2d);
             displayPlayerPosition(playerPosition);
             let map_2d_move = move_player(map_2d, key, playerPosition);
-            display2dMap(map_2d);
+            display2dMap(map_2d_move);
         }
     });
 }
