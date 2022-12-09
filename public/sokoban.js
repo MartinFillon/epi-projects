@@ -22,3 +22,4 @@ document.getElementById('file-input').addEventListener('change',  (e, map) => {
     map = "This is map"
     document.querySelector('h2').innerHTML = map;
 }, false);
+console.log(map);
