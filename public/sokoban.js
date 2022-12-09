@@ -14,7 +14,7 @@ function display2dMap(map) {
 }
 
 function displayPlayerPosition(playerPosition) {
-    document.querySelector('h3').innerHTML = playerPosition.toString();
+    document.querySelector('h3').innerHTML = JSON.stringify(playerPosition);
 }
 
 window.addEventListener('keydown', function (e) {
