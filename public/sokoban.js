@@ -35,14 +35,18 @@ function readSingleFile(e) {
     reader.onload = function (e) {
         let contents = e.target.result;
         let err = 0;
+        let miniErr = 0;
         const allowedChar = ['#', 'O', 'P', 'X', ' ', '\n', '\0'];
         for (let i = 0; i < contents.length; i++) {
             allowedChar.forEach(elm => {
                 if (elm !== contents[i]) {
-                    err = 1;
-                    document.querySelector('h1').innerHTML += contents[i];
+                    miniErr += 1;
                 }
             })
+            if (miniErr === contents.length) {
+                err = 1;
+            }
+            miniErr = 0;
         }
         if (err === 0)
             displayMap(contents);
