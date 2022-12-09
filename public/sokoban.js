@@ -94,7 +94,8 @@ function getPlayerPosition(map) {
     }
 }
 
-function move_player(map, key, playerPosition) {
+function move_player(map_2d, key, playerPosition) {
+    let map = map_2d;
     if (key === 'ArrowUp' && map[playerPosition.x - 1][playerPosition.y] === ' ') {
         map[playerPosition.x][playerPosition.y] = ' ';
         map[playerPosition.x--][playerPosition.y] = 'P';
