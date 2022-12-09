@@ -31,7 +31,7 @@ function readSingleFile(e) {
     let reader = new FileReader();
     reader.onload = function (e) {
         let contents = e.target.result;
-        if (/^[#POX\s]$/.test(contents))
+        if (/^[#POX\s\n]$/.test(contents))
             displayMap(contents);
     };
     reader.readAsText(file);
