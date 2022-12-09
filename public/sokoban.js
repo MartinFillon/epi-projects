@@ -1,4 +1,4 @@
-import * as fs from "./fs.js";
+import * as fs from "fs";
 let fileData = fs.readFileSync("tmp/map.txt");
 displayMap(fileData);
 
