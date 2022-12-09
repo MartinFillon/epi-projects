@@ -133,11 +133,11 @@ function getObjectives(map) {
 }
 
 function move_player(map_2d, key, playerPosition) {
-    for (let i = 0; i < OBJECTIVES_COUNT; i++) {
+    /*for (let i = 0; i < OBJECTIVES_COUNT; i++) {
         if (playerPosition.x === OBJECTIVES[i].ox && playerPosition.y === OBJECTIVES[i].oy) {
             return movePlayer(map_2d, key, playerPosition, 'O');
         }
-    }
+    }*/
     return movePlayer(map_2d, key, playerPosition, ' ');
 }
 
