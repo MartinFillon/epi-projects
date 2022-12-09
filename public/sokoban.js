@@ -1,5 +1,5 @@
 function displayMap(map) {
-    document.querySelector('h1').innerHTML = map;
+    document.querySelector('h1').innerHTML = JSON.stringify(map);
 }
 
 window.addEventListener('keydown', function (e) {
@@ -28,7 +28,7 @@ function check_key(key) {
             document.getElementById('key').innerHTML = `You pressed ${key}`;
             let map = document.getElementById('map').innerHTML;
             let map_2d = get_2d_map(map);
-            displayMap(map_2d[0]);
+            displayMap(map_2d);
         }
     });
 }
