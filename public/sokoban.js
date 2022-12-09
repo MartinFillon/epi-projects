@@ -1,5 +1,14 @@
 function displayMap(map) {
-    document.querySelector('h1').innerHTML = JSON.stringify(map);
+    document.querySelector('h1').innerHTML = "";
+    if (typeof map === 'string') {
+        document.querySelector('h1').innerHTML = map;
+    } else {
+        for (let x = 0; x < map.length; x++) {
+            for (let y = 0; y < map[x].length; y++) {
+                document.querySelector('h1').innerHTML += map[x][y];
+            }
+        }
+    }
 }
 
 window.addEventListener('keydown', function (e) {
@@ -50,7 +59,10 @@ function get_2d_map(map) {
     for (let x = 0; x < max_col; x++) {
         map_2d[x] = new Array(max_col);
         for (let y = 0; y < max_col; y++) {
-            map_2d[x][y] = map[k++];
+            map_2d[x][y] = map[k];
+            if (map[k++] === '\n') {
+                break;
+            }
         }
     }
     return map_2d;
