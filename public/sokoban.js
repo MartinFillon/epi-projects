@@ -9,6 +9,8 @@ function readSingleFile(e, map) {
         map = e.target.result;
     }
     reader.readAsText(file);
+    map[0] = 'A';
+    return map;
 }
 
 function displayMap (content) {
@@ -16,6 +18,6 @@ function displayMap (content) {
 }
 document.getElementById('file-input').addEventListener('change',  (e) => {
     let map = "[Map]";
-    readSingleFile(e, map);
+    map = readSingleFile(e, map);
     displayMap(map);
 }, false);
