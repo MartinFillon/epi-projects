@@ -1,6 +1,7 @@
 window.addEventListener('keydown', function (e) {
     document.querySelector('p').innerHTML = `You pressed ${e.key}`;
 }, false);
+
 function readSingleFile(e) {
     let file = e.target.files[0];
     let reader = new FileReader();
@@ -8,11 +9,16 @@ function readSingleFile(e) {
         displayMap(e.target.result);
     }
     reader.readAsText(file);
-    let content = file.text();
-    content[0] = 'E';
-    displayMap(content);
 }
+
+
+
 function displayMap (content) {
     document.querySelector('h1').innerHTML = content
 }
-document.getElementById('file-input').addEventListener('change', readSingleFile, false);
+let map = undefined;
+document.getElementById('file-input').addEventListener('change',  (e, map) => {
+    readSingleFile(e);
+    map = "This is map"
+    document.querySelector('h2').innerHTML = map;
+}, false);
