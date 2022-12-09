@@ -34,7 +34,16 @@ function readSingleFile(e) {
     let reader = new FileReader();
     reader.onload = function (e) {
         let contents = e.target.result;
-        if (/^[#POX\s\n]$/.test(contents))
+        let err = 0;
+        const allowedChar = ['#', 'O', 'P', 'X', ' ', '\n', '\0'];
+        for (let i = 0; i < contents.length; i++) {
+            allowedChar.forEach(elm => {
+                if (elm !== contents[i]) {
+                    err = 1;
+                }
+            })
+        }
+        if (err === 0)
             displayMap(contents);
     };
     reader.readAsText(file);
