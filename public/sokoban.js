@@ -3,8 +3,8 @@ function displayMap(map) {
 }
 
 function display2dMap(map) {
-    document.querySelector('h2').innerHTML = " ";
-    for (let x = 0; x < map.length; x++) {
+    document.querySelector('h2').innerHTML = "\n";
+    for (let x = 0; x < map.length - 1; x++) {
         for (let y = 0; y < map[x].length; y++) {
             document.querySelector('h2').innerHTML += map[x][y];
         }
@@ -55,7 +55,7 @@ function get_2d_map(map) {
         }
     }
     let k = 0;
-    let map_2d = new Array(row - 1);
+    let map_2d = new Array(row);
     for (let x = 0; x < max_col; x++) {
         map_2d[x] = new Array(max_col);
         for (let y = 0; y < max_col; y++) {
