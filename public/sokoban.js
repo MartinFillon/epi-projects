@@ -42,6 +42,9 @@ function readSingleFile(e) {
                 if (elm !== contents[i]) {
                     miniErr += 1;
                 }
+                if (contents[i] === 'O') {
+                    OBJECTIVES_COUNT += 1;
+                }
             })
             if (miniErr === contents.length) {
                 err = 1;
@@ -103,9 +106,6 @@ function getPlayerPosition(map) {
             if (map[x][y] === 'P') {
                 px = x;
                 py = y;
-            }
-            if (map[x][y] === 'O') {
-                OBJECTIVES_COUNT += 1;
             }
         }
     }
