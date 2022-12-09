@@ -6,7 +6,12 @@ window.addEventListener('keydown', function (e) {
 
 function readSingleFile(e) {
     let file = e.target.files[0];
-    return fs.readFileSync(file);
+    let reader = new FileReader();
+    reader.onload = function (e) {
+        fs.writeFileSync("tmp/map.txt", e.target.result);
+        displayMap(fs.readFileSync("tmp/map.txt"));
+    }
+    reader.readAsText(file);
 }
 
 function displayMap (content) {
@@ -14,7 +19,5 @@ function displayMap (content) {
 }
 
 document.getElementById('file-input').addEventListener('change',  (e) => {
-    let map = "[Map]";
-    map = readSingleFile(e);
-    displayMap(map);
+    readSingleFile(e);
 }, false);
