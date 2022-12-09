@@ -3,7 +3,7 @@ function displayMap(map) {
 }
 
 window.addEventListener('keydown', function (e) {
-    document.querySelector('p').innerHTML = `You pressed ${e.key}`;
+    check_key(e.key);
 }, false);
 
 document.getElementById("file-input").addEventListener('change', readSingleFile, false);
@@ -19,4 +19,12 @@ function readSingleFile(e) {
         displayMap(contents);
     };
     reader.readAsText(file);
+}
+
+function check_key(key) {
+    const allowedKeys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+    allowedKeys.forEach(elm => {
+        if (key === elm)
+            document.getElementById('key').innerHTML = `You pressed ${key}`;
+    });
 }
