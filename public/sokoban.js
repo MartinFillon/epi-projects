@@ -1,12 +1,11 @@
 function displayMap(map) {
-    document.querySelector('h1').innerHTML = "";
-    if (typeof map === 'string') {
-        document.querySelector('h1').innerHTML = map;
-    } else {
-        for (let x = 0; x < map.length; x++) {
-            for (let y = 0; y < map[x].length; y++) {
-                document.querySelector('h1').innerHTML += map[x][y];
-            }
+    document.querySelector('h1').innerHTML = map;
+}
+
+function display2dMap(map) {
+    for (let x = 0; x < map.length; x++) {
+        for (let y = 0; y < map[x].length; y++) {
+            document.querySelector('h2').innerHTML += map[x][y];
         }
     }
 }
@@ -37,7 +36,7 @@ function check_key(key) {
             document.getElementById('key').innerHTML = `You pressed ${key}`;
             let map = document.getElementById('map').innerHTML;
             let map_2d = get_2d_map(map);
-            displayMap(map_2d);
+            display2dMap(map_2d);
         }
     });
 }

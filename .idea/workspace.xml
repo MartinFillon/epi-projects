@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8087fc92-97e5-40ba-9b3c-bfc617cb0a44" name="Changes" comment="[ADD] 2 dimensions map">
+    <list default="true" id="8087fc92-97e5-40ba-9b3c-bfc617cb0a44" name="Changes" comment="[ADD] 2 fimension map display">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sokoban.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/sokoban.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/sokoban.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/sokoban.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +67,7 @@
       <workItem from="1670533265067" duration="3898000" />
       <workItem from="1670574572018" duration="4721000" />
       <workItem from="1670582622248" duration="19000" />
-      <workItem from="1670593973563" duration="2493000" />
+      <workItem from="1670593973563" duration="3304000" />
     </task>
     <task id="LOCAL-00001" summary="[ADD] 101pong">
       <created>1670534286614</created>
@@ -298,7 +300,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670596544748</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="[ADD] 2 dimensions map">
+      <created>1670596681007</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1670596681007</updated>
+    </task>
+    <task id="LOCAL-00035" summary="[ADD] 2 fimension map display">
+      <created>1670597205087</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1670597205087</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,6 +350,7 @@
     <MESSAGE value="[FIX] map showing" />
     <MESSAGE value="[FIX] key recognition" />
     <MESSAGE value="[ADD] 2 dimensions map" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] 2 dimensions map" />
+    <MESSAGE value="[ADD] 2 fimension map display" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] 2 fimension map display" />
   </component>
 </project>
