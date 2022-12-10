@@ -124,7 +124,9 @@ function getObjectives(map) {
 function move_player(map_2d, key, playerPosition) {
     document.getElementById('objectives').innerHTML = "";
     for (let i = 0; i < OBJECTIVES_COUNT; i++) {
-        document.getElementById('objectives').innerHTML += JSON.stringify(OBJECTIVES[i]);
+        if (playerPosition.x === OBJECTIVES[i].ox && playerPosition.y === OBJECTIVES[i].oy) {
+            return move_player(map_2d, key, playerPosition, 'O');
+        }
     }
     return movePlayer(map_2d, key, playerPosition, ' ');
 }
