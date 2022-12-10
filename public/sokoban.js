@@ -35,21 +35,13 @@ function readSingleFile(e) {
     reader.onload = function (e) {
         let contents = e.target.result;
         let err = 0;
-        let miniErr = 0;
-        const allowedChar = ['#', 'O', 'P', 'X', ' ', '\n', '\0'];
         for (let i = 0; i < contents.length; i++) {
-            allowedChar.forEach(elm => {
-                if (elm !== contents[i]) {
-                    miniErr += 1;
-                }
-                if (contents[i] === 'O') {
-                    OBJECTIVES_COUNT += 1;
-                }
-            })
-            if (miniErr === contents.length) {
+            if (contents[i] !== 'O' || contents[i] !== 'X' || contents[i] !== ' ' || contents[i] !== '\n' || contents[i] !== '\0' || contents[i] !== '#') {
                 err = 1;
             }
-            miniErr = 0;
+            if (contents[i] === 'O') {
+                OBJECTIVES_COUNT += 1;
+            }
         }
         if (err === 0)
             displayMap(contents);
@@ -116,7 +108,7 @@ function getPlayerPosition(map) {
 }
 
 function getObjectives(map) {
-    if (OBJECTIVES === undefined) {
+    if (OBJECTIVES === undefined && OBJECTIVES !== 0) {
         OBJECTIVES = new Array(OBJECTIVES_COUNT);
         let i = 0;
         for (let x = 0; x < map.length; x++) {
