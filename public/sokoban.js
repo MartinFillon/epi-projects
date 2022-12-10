@@ -27,6 +27,7 @@ window.addEventListener('keydown', function (e) {
 document.getElementById("file-input").addEventListener('change', readSingleFile, false);
 
 function readSingleFile(e) {
+    OBJECTIVES = 0;
     let file = e.target.files[0];
     if (!file) {
         return
@@ -125,7 +126,7 @@ function move_player(map_2d, key, playerPosition) {
     for (let i = 0; i < OBJECTIVES_COUNT; i++) {
         document.getElementById('objectives').innerHTML = JSON.stringify(OBJECTIVES[i]);
         if (playerPosition.x === OBJECTIVES[i].ox && playerPosition.y === OBJECTIVES[i].oy) {
-            document.getElementById('objectives').innerHTML += " On an objective";
+            document.getElementById('objectives').innerHTML += ` On an objective ${key}`;
             return move_player(map_2d, key, playerPosition, 'O');
         }
     }
