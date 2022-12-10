@@ -125,7 +125,7 @@ function move_player(map_2d, key, playerPosition) {
     for (let i = 0; i < OBJECTIVES_COUNT; i++) {
         document.getElementById('objectives').innerHTML = JSON.stringify(OBJECTIVES[i]);
         if (playerPosition.x === OBJECTIVES[i].ox && playerPosition.y === OBJECTIVES[i].oy) {
-            document.getElementById('objectives').innerHTML += ` On an objective ${key} ${(map_2d[playerPosition.x - 1][playerPosition.y] === ' ' || map_2d[playerPosition.x - 1][playerPosition.y] === 'O')}`;
+            document.getElementById('objectives').innerHTML += ` On an objective ${key}`;
             return move_player(map_2d, key, playerPosition, 'O');
         }
     }
@@ -134,6 +134,7 @@ function move_player(map_2d, key, playerPosition) {
 
 function movePlayer(map, key, playerPosition, char) {
     if (key === "ArrowUp" && (map[playerPosition.x - 1][playerPosition.y] === ' ' || map[playerPosition.x - 1][playerPosition.y] === 'O')) {
+        document.getElementById('objectives').innerHTML += ` On an objective ${(map_2d[playerPosition.x - 1][playerPosition.y] === ' ' || map_2d[playerPosition.x - 1][playerPosition.y] === 'O')}`;
         map[playerPosition.x--][playerPosition.y] = char;
         map[playerPosition.x][playerPosition.y] = 'P';
         display2dMap(map);
