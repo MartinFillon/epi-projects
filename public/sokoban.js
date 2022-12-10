@@ -27,13 +27,13 @@ window.addEventListener('keydown', function (e) {
 document.getElementById("file-input").addEventListener('change', readSingleFile, false);
 
 function readSingleFile(e) {
-    OBJECTIVES = 0;
     let file = e.target.files[0];
     if (!file) {
         return
     }
     let reader = new FileReader();
     reader.onload = function (e) {
+        OBJECTIVES = 0;
         let contents = e.target.result;
         let err = 0;
         for (let i = 0; i < contents.length; i++) {
