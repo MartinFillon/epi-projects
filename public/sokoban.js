@@ -36,9 +36,6 @@ function readSingleFile(e) {
         let contents = e.target.result;
         let err = 0;
         for (let i = 0; i < contents.length; i++) {
-            if (contents[i] !== 'O' || contents[i] !== 'X' || contents[i] !== ' ' || contents[i] !== '\n' || contents[i] !== '\0' || contents[i] !== '#') {
-                err = 1;
-            }
             if (contents[i] === 'O') {
                 OBJECTIVES_COUNT += 1;
             }
