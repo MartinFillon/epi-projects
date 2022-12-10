@@ -125,6 +125,7 @@ function move_player(map_2d, key, playerPosition) {
     for (let i = 0; i < OBJECTIVES_COUNT; i++) {
         document.getElementById('objectives').innerHTML = JSON.stringify(OBJECTIVES[i]);
         if (playerPosition.x === OBJECTIVES[i].ox && playerPosition.y === OBJECTIVES[i].oy) {
+            document.getElementById('objectives').innerHTML += " On an objective";
             return move_player(map_2d, key, playerPosition, 'O');
         }
     }
