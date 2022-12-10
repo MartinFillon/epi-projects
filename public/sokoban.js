@@ -33,7 +33,6 @@ function readSingleFile(e) {
     }
     let reader = new FileReader();
     reader.onload = function (e) {
-        OBJECTIVES = 0;
         let contents = e.target.result;
         let err = 0;
         for (let i = 0; i < contents.length; i++) {
