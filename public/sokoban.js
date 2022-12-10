@@ -132,45 +132,45 @@ function move_player(map_2d, key, playerPosition) {
 }
 
 function movePlayer(map, key, playerPosition, char) {
-    if (key === "ArrowUp" && map[playerPosition.x - 1][playerPosition.y] === ' ') {
+    if (key === "ArrowUp" &&  / O/.test(map[playerPosition.x - 1][playerPosition.y])) {
         map[playerPosition.x--][playerPosition.y] = char;
         map[playerPosition.x][playerPosition.y] = 'P';
         display2dMap(map);
     }
-    if (key === "ArrowUp" && map[playerPosition.x - 1][playerPosition.y] === 'X' && map[playerPosition.x - 2][playerPosition.y] === ' ') {
+    if (key === "ArrowUp" && map[playerPosition.x - 1][playerPosition.y] === 'X' && / O/.test(map[playerPosition.x - 2][playerPosition.y])) {
         map[playerPosition.x--][playerPosition.y] = char;
         map[playerPosition.x][playerPosition.y] = 'P';
         map[playerPosition.x - 1][playerPosition.y] = 'X';
         display2dMap(map);
     }
-    if (key === "ArrowDown" && map[playerPosition.x + 1][playerPosition.y] === ' ') {
+    if (key === "ArrowDown" && / O/.test(map[playerPosition.x + 1][playerPosition.y])) {
         map[playerPosition.x++][playerPosition.y] = char;
         map[playerPosition.x][playerPosition.y] = 'P';
         display2dMap(map);
     }
-    if (key === "ArrowDown" && map[playerPosition.x + 1][playerPosition.y] === 'X' && map[playerPosition.x + 2][playerPosition.y] === ' ') {
+    if (key === "ArrowDown" && map[playerPosition.x + 1][playerPosition.y] === 'X' && / O/.test(map[playerPosition.x + 2][playerPosition.y])) {
         map[playerPosition.x++][playerPosition.y] = char;
         map[playerPosition.x][playerPosition.y] = 'P';
         map[playerPosition.x + 1][playerPosition.y] = 'X';
         display2dMap(map);
     }
-    if (key === "ArrowLeft" && map[playerPosition.x][playerPosition.y - 1] === ' ') {
+    if (key === "ArrowLeft" && / O/.test(map[playerPosition.x][playerPosition.y - 1])) {
         map[playerPosition.x][playerPosition.y--] = char;
         map[playerPosition.x][playerPosition.y] = 'P';
         display2dMap(map);
     }
-    if (key === "ArrowLeft" && map[playerPosition.x][playerPosition.y - 1] === 'X' && map[playerPosition.x][playerPosition.y - 2] === ' ') {
+    if (key === "ArrowLeft" && map[playerPosition.x][playerPosition.y - 1] === 'X' && / O/.test(map[playerPosition.x][playerPosition.y - 2])) {
         map[playerPosition.x][playerPosition.y--] = char;
         map[playerPosition.x][playerPosition.y] = 'P';
         map[playerPosition.x][playerPosition.y - 1] = 'X';
         display2dMap(map);
     }
-    if (key === "ArrowRight" && map[playerPosition.x][playerPosition.y + 1] === ' ') {
+    if (key === "ArrowRight" && / O/.test(map[playerPosition.x][playerPosition.y + 1])) {
         map[playerPosition.x][playerPosition.y++] = char;
         map[playerPosition.x][playerPosition.y] = 'P';
         display2dMap(map);
     }
-    if (key === "ArrowRight" && map[playerPosition.x][playerPosition.y + 1] === 'X' && map[playerPosition.x][playerPosition.y + 2] === ' ') {
+    if (key === "ArrowRight" && map[playerPosition.x][playerPosition.y + 1] === 'X' && / O/.test(map[playerPosition.x][playerPosition.y + 2])) {
         map[playerPosition.x][playerPosition.y++] = char;
         map[playerPosition.x][playerPosition.y] = 'P';
         map[playerPosition.x][playerPosition.y + 1] = 'X';
